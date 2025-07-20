@@ -1,0 +1,182 @@
+/* Light theme default */
+:root {
+  --bg-color: #b5abab;
+  --text-color: #2d3e50;
+  --form-bg: rgba(212, 209, 209, 0.95);
+  --item-bg: #f9f9f9;
+  --item-border: #007bff;
+  --btn-add-bg: #28a745;
+  --btn-add-hover: #218838;
+  --btn-delete-bg: #dc3545;
+  --btn-delete-hover: #c82333;
+  --muted-text: #999;
+  --input-border: #ccc;
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --form-bg: #3d3b3b;
+  --item-bg: #2a2a2a;
+  --item-border: #66b2ff;
+  --btn-add-bg: #3cb371;
+  --btn-add-hover: #2e8b57;
+  --btn-delete-bg: #ff4d4f;
+  --btn-delete-hover: #cc0000;
+  --muted-text: #aaa;
+  --input-border: #444;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Container */
+.task-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 20px;
+  background-color: var(--form-bg);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  float: right;
+  margin-top: -2.5rem;
+  margin-right: 10px;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.form input,
+.form textarea,
+.form select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background-color: inherit;
+  color: inherit;
+}
+
+.form textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* Buttons */
+.add-button {
+  padding: 10px;
+  background-color: var(--btn-add-bg);
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.add-button:hover {
+  background-color: var(--btn-add-hover);
+}
+
+.edit-button {
+  padding: 6px 12px;
+  margin-right: 6px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  background-color: var(--item-bg);
+  padding: 15px;
+  border-left: 5px solid var(--item-border);
+  margin-bottom: 12px;
+  border-radius: 4px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.task-item.completed {
+  background-color: #e6ffe6;
+  border-left-color: var(--btn-add-bg);
+  text-decoration: line-through;
+}
+
+.task-item.completed strong {
+  color: var(--btn-add-bg);
+}
+
+/* Delete Button */
+.delete-button {
+  background-color: var(--btn-delete-bg);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  transition: background-color 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: var(--btn-delete-hover);
+}
+
+.empty {
+  text-align: center;
+  color: var(--muted-text);
+}
+
+/* Filters */
+.filter-controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.filter-controls input,
+.filter-controls select {
+  padding: 8px;
+  font-size: 1rem;
+  width: 48%;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background-color: inherit;
+  color: inherit;
+}
